@@ -7,7 +7,7 @@ To add the overlay to a page, inject a JavaScript snippet like this:
 <script id=demo-overlay
         end=1686789606
         type=text/javascript
-        src=https://raw.githubusercontent.com/virtUOS/evaluation-countdown-overlay/main/countdown.js>
+        src=/countdown.js>
 </script>
 ```
 
