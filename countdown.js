@@ -6,7 +6,21 @@ addEventListener('DOMContentLoaded', (event) => {
 	const body = document.getElementsByTagName('body')[0];
 	const display = document.createElement('div');
 	body.appendChild(display);
-	display.setAttribute('style', 'display: flex; gap: 10px; position: absolute; top: 5px; left: 5px; right: 5px; padding: 10px; border-radius: 5px; background: black; color: white; opacity: 0.6; justify-content: center; align-items: center;');
+	display.style.zIndex = '999999';
+	display.style.display = 'flex';
+	display.style.gap = '10px';
+	display.style.position = 'absolute';
+	display.style.top = '5px';
+	display.style.left = '5px';
+	display.style.right = '5px';
+	display.style.padding = '10px';
+	display.style.borderRradius = '5px';
+	display.style.background = 'black';
+	display.style.color = 'white';
+	display.style.opacity = '0.6';
+	display.style.justifyContent = 'center';
+	display.style.alignItems = 'center';
+
 	const countdown = document.createElement('div');
 	display.appendChild(countdown);
 	const actions = document.createElement('div');
@@ -20,6 +34,7 @@ addEventListener('DOMContentLoaded', (event) => {
 	info.style.border = '1px solid white';
 	info.style.color = 'white';
 	info.style.margin = '5px';
+	info.style.padding = '5px 10px';
 	actions.appendChild(info);
 	info.onclick = () => {
 		alert('This is an installation meant for evaluation. It will be decommissioned after 3 months of testing. At that point a decision needs to be made if we want to continue running this service. Even if the decision is in favor of continuing the service, we do not guarantee any data migration.');
@@ -32,6 +47,7 @@ addEventListener('DOMContentLoaded', (event) => {
 	close.style.borderRadius = '5px';
 	close.style.border = '1px solid white';
 	close.style.color = 'white';
+	close.style.padding = '5px 10px';
 	actions.appendChild(close);
 	close.onclick = () => {
 		clearInterval(counter);
@@ -42,8 +58,8 @@ addEventListener('DOMContentLoaded', (event) => {
 		const now = new Date().getTime();
 		const distance = end - now;
 
-		// Hide after 30 seconds
-		if (now - start >= 20000) {
+		// Hide after 15 seconds
+		if (now - start >= 15000) {
 			clearInterval(counter);
 			display.parentNode.removeChild(display);
 		}
